@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# random quote app for freecodecamp Front End Librairies Certification
+
+![Screenshot](Random-quote-screenshot.png)
+
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
