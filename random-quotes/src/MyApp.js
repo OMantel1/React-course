@@ -33,7 +33,7 @@ class Quotes extends React.Component {
                 <div className="links">
                     <Share />
                     <button  id="new-quote" className="new-quote  btn" onClick={this.handleClick}>New quote</button>
-                    </div>
+                </div>
             </div>
         </div>
       );
