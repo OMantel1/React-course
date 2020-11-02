@@ -72,3 +72,21 @@ body {
 .btn:hover {
     background-color: #dd7569;
 }
+
+/***************/
+/* ANIMATIONs */
+/***************/
+
+@keyframes opacity {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animation-opacity {
+    animation:  opacity 1s;
+}
