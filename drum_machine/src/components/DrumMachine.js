@@ -42,19 +42,7 @@ class DrumMachine extends React.Component {
             <div id="display">
               {this.state.display}
             </div>
-            <div className="Bank">
-              <h2>SoundBank</h2>
-                <ul>
-
-                  {this.state.soundBank.map((item) => 
-                    <SoundList 
-                      id={item.id}
-                      item={item}  
-                      />
-                  )}
-
-                </ul>
-            </div>
+            <SoundList items={this.state.soundBank} title="Soundbank"/>
           </div>
         </div>
       )

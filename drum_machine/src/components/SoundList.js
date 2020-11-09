@@ -3,10 +3,17 @@ import React from 'react';
 class SoundList extends React.Component {
     render(){
         return(
-            <li>
-                <p>{this.props.item.key}</p>
-                <p>{this.props.id}</p>
-            </li>
+            <div className="Bank">
+                <h2>{this.props.title}</h2>
+                <ul>
+                    {this.props.items.map((item) => 
+                        <li>
+                        <p>{item.key}</p>
+                        <p>{item.id}</p>
+                    </li>
+                    )}
+                </ul>
+            </div>
         )
     }
 }
