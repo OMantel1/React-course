@@ -7,10 +7,10 @@ class SoundList extends React.Component {
                 <h2>{this.props.title}</h2>
                 <ul>
                     {this.props.items.map((item) => 
-                        <li>
-                        <p>{item.key}</p>
-                        <p>{item.id}</p>
-                    </li>
+                        <li key={item.key}>
+                            <p>{item.key}</p>
+                            <p>{item.id}</p>
+                        </li>
                     )}
                 </ul>
             </div>

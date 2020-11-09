@@ -32,6 +32,7 @@ class DrumMachine extends React.Component {
           {this.state.soundBank.map((pad)=> 
             <DrumPad 
               id={pad.id}
+              key={pad.id}
               keyName={pad.key}
               sound={pad.sound}
               handleDisplay={this.handleDisplay}
