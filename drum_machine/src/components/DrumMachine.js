@@ -1,6 +1,7 @@
 import React from 'react';
 import SoundList from './SoundList';
 import DrumPad from './DrumPad';
+import Display from './Display';
 
 class DrumMachine extends React.Component {
     constructor(props){
@@ -36,14 +37,13 @@ class DrumMachine extends React.Component {
               handleDisplay={this.handleDisplay}
             />
          )}
-
          </div> 
+
          <div className="drum-machine__board">
-            <div id="display">
-              {this.state.display}
-            </div>
+            <Display text={this.state.display}/>
             <SoundList items={this.state.soundBank} title="Soundbank"/>
           </div>
+
         </div>
       )
     }
