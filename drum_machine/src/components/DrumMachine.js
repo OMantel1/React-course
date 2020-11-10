@@ -6,7 +6,7 @@ import Display from './Display';
 class DrumMachine extends React.Component {
     constructor(props){
       super(props)
-     
+   
       this.state= {
         soundBank:[
           {id:"Kick 1", key:"Q", sound:"audio/Kick 1.wav"},
@@ -22,8 +22,22 @@ class DrumMachine extends React.Component {
         display: "...waiting sample"
       };
     }
+
+    componentDidMount(){
+      document.addEventListener("keydown", this.handleKeydown)
+    }
+
     handleDisplay = display => this.setState({ display })
-    
+
+    handleKeydown = event => {
+      let bank  = this.state.soundBank.filter(x => x.key.charCodeAt() === event.keyCode);
+      if(bank.length !== 0){
+        let audioSrc = document.getElementById(bank[0].id);
+        audioSrc.play();
+        audioSrc.currentTime = 0;
+      }
+    }
+  
     render(){
       return(
         <div id="drum-machine">
