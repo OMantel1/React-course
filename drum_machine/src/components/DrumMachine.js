@@ -27,17 +27,25 @@ class DrumMachine extends React.Component {
       document.addEventListener("keydown", this.handleKeydown)
     }
 
-    handleDisplay = display => this.setState({ display })
-
-    handleKeydown = event => {
-      let bank  = this.state.soundBank.filter(x => x.key.charCodeAt() === event.keyCode);
-      if(bank.length !== 0){
-        let audioSrc = document.getElementById(bank[0].id);
+    handleDisplay = (display) => this.setState({ display })
+    handleKeydown = (event) => {
+      let bank = this.state.soundBank.filter(x => x.key.charCodeAt() === event.keyCode);
+      if (bank.length !== 0) {
+        let audioSrc = document.getElementById(bank[0].key).firstElementChild;
         audioSrc.play();
         audioSrc.currentTime = 0;
+        this.setState({
+          display: bank[0].id
+        })
+
+      } else {
+        console.log("Try another key")
+        this.setState({
+          display: "Try another key"
+        })
       }
     }
-  
+
     render(){
       return(
         <div id="drum-machine">

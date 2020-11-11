@@ -5,21 +5,22 @@ class DrumPad extends React.Component {
         super(props)
         this.handleClick = this.handleClick.bind(this);
       }
-    handleClick(event){
-        let elementIdClicked = event.target.querySelector("audio").id
-        let audioSrc = document.getElementById(elementIdClicked)
-        audioSrc.play()
-        audioSrc.currentTime = 0;
-        this.props.handleDisplay(this.props.id)
 
+    handleClick(event){
+        this.audio.play()
+        console.log(this.audio)
+        this.audio.currentTime = 0;
+        this.props.handleDisplay(this.props.id)
       }
+
     render(){
         return(
-            <button className="drum-pad" onClick={this.handleClick}>
+            <button className="drum-pad" id={this.props.keyName} onClick={this.handleClick}>
                 {this.props.keyName}
                 <audio 
+                    ref = {ref => this.audio = ref}
                     className='clip' 
-                    id={this.props.id} 
+                    id={this.props.keyName} 
                     src={this.props.sound} >
                 </audio>
             </button>
